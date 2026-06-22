@@ -2,13 +2,13 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { BookOpen, Activity, GraduationCap, Users, MessageCircle, Shield } from "lucide-react";
 import { useIsAdmin } from "@/hooks/useRole";
 
-const tabs = [
+const tabs: { to: string; label: string; icon: typeof BookOpen; exact?: boolean }[] = [
   { to: "/app", label: "Syllabus", icon: BookOpen, exact: true },
   { to: "/app/ospe", label: "OSPE", icon: Activity },
   { to: "/app/exam", label: "Exam", icon: GraduationCap },
   { to: "/app/community", label: "Community", icon: Users },
   { to: "/app/chats", label: "Chats", icon: MessageCircle },
-] as const;
+];
 
 export function BottomNav() {
   const { pathname } = useLocation();
